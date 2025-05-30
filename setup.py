@@ -1,21 +1,21 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import os
 import re
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 # Read version from __init__.py
-with open(os.path.join('codecplus', '__init__.py'), encoding='utf-8') as f:
+with open(os.path.join("codecplus", "__init__.py"), encoding="utf-8") as f:
     version = re.search(r'__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read()).group(1)
 
 # Read the README.md for the long description
-with open('README.md', encoding='utf-8') as f:
+with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 
 # Read the requirements
-with open('requirements.txt', encoding='utf-8') as f:
-    requirements = f.read().strip().split('\n')
+with open("requirements.txt", encoding="utf-8") as f:
+    requirements = f.read().strip().split("\n")
 
 setup(
     name="codecplus",

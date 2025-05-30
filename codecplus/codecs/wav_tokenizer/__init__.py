@@ -2,4 +2,4 @@
 
 from codecplus.codecs.wav_tokenizer.model import WavTokenizer
 
-__all__ = ['WavTokenizer']
+__all__ = ["WavTokenizer"]

@@ -2,4 +2,4 @@
 
 from codecplus.codecs.dac.model import DAC
 
-__all__ = ['DAC']
+__all__ = ["DAC"]
