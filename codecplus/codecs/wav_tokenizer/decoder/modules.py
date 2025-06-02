@@ -194,21 +194,27 @@ class ResBlock1(nn.Module):
 
         self.gamma = nn.ParameterList(
             [
-                nn.Parameter(
-                    layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
-                )
-                if layer_scale_init_value is not None
-                else None,
-                nn.Parameter(
-                    layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
-                )
-                if layer_scale_init_value is not None
-                else None,
-                nn.Parameter(
-                    layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
-                )
-                if layer_scale_init_value is not None
-                else None,
+                (
+                    nn.Parameter(
+                        layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
+                    )
+                    if layer_scale_init_value is not None
+                    else None
+                ),
+                (
+                    nn.Parameter(
+                        layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
+                    )
+                    if layer_scale_init_value is not None
+                    else None
+                ),
+                (
+                    nn.Parameter(
+                        layer_scale_init_value * torch.ones(dim, 1), requires_grad=True
+                    )
+                    if layer_scale_init_value is not None
+                    else None
+                ),
             ]
         )
 
