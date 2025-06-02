@@ -12,7 +12,7 @@ import typing as tp
 
 import torch
 
-from ..binary import BitPacker, BitUnpacker
+from codecplus.codecs.wav_tokenizer.encoder.binary import BitPacker, BitUnpacker
 
 
 def build_stable_quantized_cdf(

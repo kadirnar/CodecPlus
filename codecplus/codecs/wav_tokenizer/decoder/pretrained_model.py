@@ -2,14 +2,18 @@ from typing import Any, Dict, Tuple, Union
 
 import torch
 import yaml
-from decoder.discriminators import (
+from torch import nn
+
+from codecplus.codecs.wav_tokenizer.decoder.discriminators import (
     MultiPeriodDiscriminator,
     MultiResolutionDiscriminator,
 )
-from decoder.feature_extractors import EncodecFeatures, FeatureExtractor
-from decoder.heads import FourierHead
-from decoder.models import Backbone
-from torch import nn
+from codecplus.codecs.wav_tokenizer.decoder.feature_extractors import (
+    EncodecFeatures,
+    FeatureExtractor,
+)
+from codecplus.codecs.wav_tokenizer.decoder.heads import FourierHead
+from codecplus.codecs.wav_tokenizer.decoder.models import Backbone
 
 
 def instantiate_class(args: Union[Any, Tuple[Any, ...]], init: Dict[str, Any]) -> Any:
