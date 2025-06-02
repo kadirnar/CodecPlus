@@ -37,7 +37,7 @@ import torch.nn.functional as F
 from einops import rearrange, repeat
 from torch import nn
 
-from .. import distrib
+from codecplus.codecs.wav_tokenizer.encoder import distrib
 
 
 def default(val: tp.Any, d: tp.Any) -> tp.Any:

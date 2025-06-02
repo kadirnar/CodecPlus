@@ -1,10 +1,3 @@
-# Copyright (c) Meta Platforms, Inc. and affiliates.
-# All rights reserved.
-#
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
-"""MS-STFT discriminator, provided here for reference."""
-
 import typing as tp
 
 import torch
@@ -12,7 +5,7 @@ import torchaudio
 from einops import rearrange
 from torch import nn
 
-from .modules import NormConv2d
+from codecplus.codecs.wav_tokenizer.encoder.modules import NormConv2d
 
 FeatureMapType = tp.List[torch.Tensor]
 LogitsType = torch.Tensor
