@@ -1,5 +1,5 @@
-"""WavTokenizer: Audio tokenizer model"""
-
-from codecplus.codecs.wav_tokenizer.model import WavTokenizer
-
-__all__ = ["WavTokenizer"]
+# Initializes the wav_tokenizer package.
+# This file can be used to export symbols from submodules, e.g.:
+# from .decoder import Decoder
+# from .encoder import Encoder
+# from .model import WavTokenizer

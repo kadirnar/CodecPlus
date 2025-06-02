@@ -1,34 +1,56 @@
-#!/usr/bin/env python
-
 import os
 import re
 
 from setuptools import find_packages, setup
 
-# Read version from __init__.py
-with open(os.path.join("codecplus", "__init__.py"), encoding="utf-8") as f:
-    version = re.search(r'__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read()).group(1)
 
-# Read the README.md for the long description
-with open("README.md", encoding="utf-8") as f:
-    long_description = f.read()
+def get_requirements(req_path: str):
+    with open(req_path, encoding="utf8") as f:
+        return f.read().splitlines()
 
-# Read the requirements
-with open("requirements.txt", encoding="utf-8") as f:
-    requirements = f.read().strip().split("\n")
+
+INSTALL_REQUIRES = get_requirements("requirements.txt")
+
+
+def get_long_description():
+    base_dir = os.path.abspath(os.path.dirname(__file__))
+    with open(os.path.join(base_dir, "README.md"), encoding="utf-8") as f:
+        return f.read()
+
+
+def get_version():
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    version_file = os.path.join(current_dir, "codecplus", "__init__.py")
+    with open(version_file, encoding="utf-8") as f:
+        return re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]', f.read(), re.M).group(1)
+
+
+def get_author():
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    init_file = os.path.join(current_dir, "codecplus", "__init__.py")
+    with open(init_file, encoding="utf-8") as f:
+        return re.search(r'^__author__ = [\'"]([^\'"]*)[\'"]', f.read(), re.M).group(1)
+
+
+def get_license():
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    init_file = os.path.join(current_dir, "codecplus", "__init__.py")
+    with open(init_file, encoding="utf-8") as f:
+        return re.search(r'^__license__ = [\'"]([^\'"]*)[\'"]', f.read(), re.M).group(1)
+
 
 setup(
     name="codecplus",
-    version=version,
+    version=get_version(),
     description="Audio codec models implementation library",
-    long_description=long_description,
+    long_description=get_long_description(),
     long_description_content_type="text/markdown",
-    author="Kadir Nar",
+    author=get_author(),
     author_email="kadir.nar@example.com",
     url="https://github.com/kadirnar/CodecPlus",
     packages=find_packages(),
     python_requires=">=3.7",
-    install_requires=requirements,
+    install_requires=INSTALL_REQUIRES,
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",

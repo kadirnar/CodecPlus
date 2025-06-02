@@ -7,9 +7,9 @@ name = "codecplus"
 description = "Audio codec models implementation library"
 readme = "README.md"
 authors = [
-    {name = "Kadir Nar", email = "kadir.nar@example.com"}
+    {name = "Kadir Nar", email = "kadir.nar@hotmail.com"}
 ]
-requires-python = ">=3.7"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -61,7 +61,7 @@ include_trailing_comma = true
 skip_gitignore = true
 
 [tool.mypy]
-python_version = "3.7"
+python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
@@ -82,7 +82,7 @@ exclude = [
     "venv",
     ".venv",
 ]
-ignore = ["E501", "E203", "W503"]
+ignore = ["E501"]
 
 [tool.setuptools]
 packages = {find = {exclude = ["tests*", "examples*"]}}
